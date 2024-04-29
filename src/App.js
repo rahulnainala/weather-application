@@ -1,17 +1,7 @@
-import logo from "./logo.svg";
-import "./App.css";
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <h1 className="text-4xl font-semibold underline text-center">
+      Hello world!
+    </h1>
   );
 }
-
-export default App;
