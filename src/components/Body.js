@@ -28,6 +28,9 @@ const Body = ({ searchQuery }) => {
         <div id="location" className="text-4xl mb-4">
           {weatherData.name}
         </div>
+        <div id="country" className="text-3xl mb-4">
+          {weatherData.country}
+        </div>
         {isCelsius ? (
           <>
             <div
@@ -66,6 +69,7 @@ const Body = ({ searchQuery }) => {
             </div>
           </>
         )}
+        <div className="text-xl pt-1">{weatherData.condition_text}</div>
       </div>
     );
   };
