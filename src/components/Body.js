@@ -4,13 +4,13 @@ import { API_Key } from "../utils/constants";
 
 const Body = ({ searchQuery }) => {
   const [weatherData, setWeatherData] = useState({
-    name: "Place Name",
-    country: "Country",
-    temp_c: "Temp",
-    temp_f: "Temp",
-    feelslike_c: "Temp Feels ",
-    feelslike_f: "Temp Feels ",
-    condition_text: "Condition",
+    name: "",
+    country: "",
+    temp_c: "",
+    temp_f: "",
+    feelslike_c: "",
+    feelslike_f: "",
+    condition_text: "",
   });
   const [isCelsius, setIsCelsius] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -33,40 +33,48 @@ const Body = ({ searchQuery }) => {
         </div>
         {isCelsius ? (
           <>
-            <div
-              id="temp_main"
-              className="text-5xl mb-2 cursor-pointer bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text"
-            >
-              {weatherData.temp_c}°C
-            </div>
-            <div id="temp" className="text-l">
-              (Click to change to Fahrenheit)
-            </div>
-            <div id="conditiontext" className="text-3xl">
-              Feels Like{" "}
-              <span className="bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text">
-                {" "}
-                {weatherData.feelslike_c} °C
-              </span>
-            </div>
+            {weatherData.temp_c && (
+              <>
+                <div
+                  id="temp_main"
+                  className="text-5xl mb-2 cursor-pointer bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text"
+                >
+                  {weatherData.temp_c}°C
+                </div>
+                <div id="temp" className="text-m">
+                  (Click to change to Fahrenheit)
+                </div>
+                <div id="conditiontext" className="text-3xl">
+                  Feels Like{" "}
+                  <span className="bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text">
+                    {" "}
+                    {weatherData.feelslike_c} °C
+                  </span>
+                </div>
+              </>
+            )}
           </>
         ) : (
           <>
-            <div
-              id="temp_main"
-              className="text-5xl mb-2 cursor-pointer bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text"
-            >
-              {weatherData.temp_f}℉
-            </div>
-            <div id="temp" className="text-l">
-              (Click to change to Celsius)
-            </div>
-            <div id="conditiontext" className="text-3xl ">
-              Feels Like{" "}
-              <span className="bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text">
-                {weatherData.feelslike_f} ℉
-              </span>
-            </div>
+            {weatherData.temp_f && (
+              <>
+                <div
+                  id="temp_main"
+                  className="text-5xl mb-2 cursor-pointer bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text"
+                >
+                  {weatherData.temp_f}℉
+                </div>
+                <div id="temp" className="text-l">
+                  (Click to change to Celsius)
+                </div>
+                <div id="conditiontext" className="text-3xl ">
+                  Feels Like{" "}
+                  <span className="bg-gradient-to-r from-purple-500 via-cyan-400 to-green-500 text-transparent bg-clip-text">
+                    {weatherData.feelslike_f} ℉
+                  </span>
+                </div>
+              </>
+            )}
           </>
         )}
         <div className="text-xl pt-1">{weatherData.condition_text}</div>

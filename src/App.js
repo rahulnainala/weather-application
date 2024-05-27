@@ -4,6 +4,7 @@ import "./App.css";
 import Body from "./components/Body";
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -13,8 +14,9 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className="lg:max-w-screen-sm sm:w-full">
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <div className="flex-grow flex flex-col items-center justify-center ">
         <SearchBar onSearch={handleSearch} />
         <Body searchQuery={searchQuery} />
       </div>

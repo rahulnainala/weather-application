@@ -17,7 +17,7 @@ const SearchBar = ({ onSearch }) => {
     <div className="searchbar cursor-pointer">
       <form
         onSubmit={handleSubmit}
-        className="bg-primary w-full flex flex-row px-1 py-1 items-center rounded-3xl border-2 border-secondary mb-20"
+        className="bg-primary w-full px-20 flex flex-row py-1 items-center rounded-3xl border-2 border-secondary mb-20"
       >
         <input
           type="text"
